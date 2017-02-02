@@ -1,3 +1,6 @@
+//Accelerated C++
+//Chapter 1 Working with strings
+//Question 1-5
 #include <iostream>
 #include <string>
 
