@@ -57,46 +57,52 @@ cout <<endl<< "Calculating the Median linearly" << endl;
 
     while (cin >> x)
     {
-    	if(count == 0){
-    		median = x;
-    		maxHeap.push(x);
-    	}
-    	else if (count % 2 == 0)
-    	{
-    		if(x > median)
-    		{
-    			int temp = minHeap.top();
-    			minHeap.pop();
-    			maxHeap.push(temp);
-    			minHeap.push(x);
-    		}
-    		else
-    		{
-    			maxHeap.push(x);
-    		}
-    		median = maxHeap.top();
-    		
+        if(maxHeap.empty()){
+            maxHeap.push(x);
+            median = x;
+        }
+        else 
+        {
+            if(minHeap.size() == maxHeap.size())
+            {
+                if(x > minHeap.top())
+                {
+                    
+                    maxHeap.push(minHeap.top());
+                    minHeap.pop();
+                    minHeap.push(x);
 
-    	}
-    	else{
-    		if(x > median)
-    		{
-    			minHeap.push(x);
-    		}
-    		else
-    		{
-    			int temp = maxHeap.top();
-    			maxHeap.pop();
-    			minHeap.push(temp);
-    			maxHeap.push(x);
-    		}
-    		median = (maxHeap.top()+minHeap.top())/2.0;
-    		
-    	}
+                }
+                else
+                {
+                    maxHeap.push(x);
+                }
+                median = maxHeap.top();
 
-    	count++;
+            }
+        
+            else
+            {
+                if(x <= maxHeap.top())
+                {
+                    minHeap.push(maxHeap.top());
+                    maxHeap.pop();
+                    maxHeap.push(x);
 
-    	cout << "Median: " << median << endl;
+                }
+                else
+                {
+                    minHeap.push(x);
+                }
+                median = (maxHeap.top()+minHeap.top())/2.0;
+            }
+        }
+            
+
+
+        count++;
+
+        cout << "Median: " << median << endl;
 
     }
 
