@@ -1,6 +1,6 @@
 //Accelerated C++
 //Chapter 4 Organizing programs and data
-//Question 4-0 
+//Question 4-1 
 
 #include <algorithm>
 #include <iomanip>
@@ -18,7 +18,18 @@ int main()
 {
 	vector<Student_info> students;
 	Student_info record;
-	string::size_type maxlen = 0;	//length of the longest name
+	int maxlen;	
+	/*
+		results in compliation error
+		chap41.cpp:27:12: error: no matching function for call to 'max'
+                maxlen = max(maxlen,record.name.size());
+                         ^~~
+		/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:2654:1: note: 
+      candidate template ignored: deduced conflicting types for parameter '_Tp'
+      ('int' vs. 'unsigned long')
+		max(const _Tp& __a, const _Tp& __b)
+
+	*/
 
 	//read and store all the students' data.
 	//Invariant: students contains all the studnets records read so far
