@@ -1,9 +1,8 @@
 //Accelerated C++
 //Chapter 4 Organizing programs and data
-//Question 4-0 Student info source file
+//Question 4-6 Student info source file
 
-
-#include "Student_info.h"
+#include "Student_info46.h"
 
 using std::istream;
 using std::vector;
@@ -15,8 +14,19 @@ bool compare(const Student_info& x, const Student_info& y)
 
 istream& read(istream& is, Student_info& s)
 {
-	is >> s.name >> s.midterm >> s.final;
-	read_hw(is, s.homework);
+	double midterm, final;
+	vector<double> homework;
+	is >> s.name >> midterm >> final;
+	read_hw(is, homework);
+	double average = 0;
+	for (int i = 0; i < homework.size(); i++)
+	{
+		average += homework[i];
+	}
+	average = average/homework.size();
+
+	s.final = 0.2 * midterm + 0.4 * final + 0.4 * average;
+
 	return is;
 }
 
