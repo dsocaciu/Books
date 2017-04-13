@@ -1,9 +1,9 @@
 //Accelerated C++
 //Chapter 9 Defining new types
-//Question 9-5
+//Question 9-6
 
 
-#include "Student_info95.h"
+#include "Student_info96.h"
 #include <algorithm>
 #include <iomanip>
 #include <iostream>
