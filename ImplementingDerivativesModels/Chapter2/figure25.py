@@ -1,7 +1,7 @@
 #Implementing Derivatives Models - Clewlow and Strickland
 #Chapter 2
-#Figure 2.3
-#valuation of a European call in a multiplcative tree
+#Figure 2.5
+#valuation of an American put in a multiplcative tree
 from math import exp,pow
 
 #parameters 
@@ -39,7 +39,7 @@ print(str(St))
 C = [0.0] * N1
 
 for j in range(0,N1):
-	C[j] = round(max(0.0, float(St[j]-K)),4)
+	C[j] = round(max(0.0, float(K-St[j])),4)
 
 print (str(C))
 
@@ -49,7 +49,9 @@ for i in range(N,0,-1):
 	for j in range(0,i):
 	#print(j)
 		C[j] = round(disc * (p* C[j+1] + (1-p)*C[j]),4)
+		St[j] = round(St[j]/d,4)
+		C[j] = round(max(C[j], K-St[j]),4)
 
 print(str(C))
 
-print("European Call: " +  str(C[0]))
+print("American put: " +  str(C[0]))
