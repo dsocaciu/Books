@@ -1,3 +1,7 @@
+//Accelerated C++
+//Chapter 11 Defining abstract data types
+//Question 11-5
+
 #include <memory>
 #include <cstddef>
 
