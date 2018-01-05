@@ -6,40 +6,40 @@ The previous chapters were all typed out. For chapter 13 (and probably going for
 
 output: 
 
-Grad::Grad(istream&)
-Core::Core(istream&)
-Grad::Grad(istream&)
-Core::Core(istream&)
-Core::Core(istream&)
-Core::Core(istream&)
-Grad::Grad(istream&)
-Core::Core(istream&)
-Core::Core(istream&)
-Grad::Grad(istream&)
-Grad::Grad(istream&)
-Grad::Grad(istream&)
-Core::Core(istream&)
-Core::Core(istream&)
-Grad::Grad(istream&)
-Core::Core(istream&)
-Core::Core(istream&)
-Grad::Grad(istream&)
-Baker     67.2
-Carpenter 82
-Davis     74.8
-Edwards   73
-Franklin  66.6
-Harris    92
-Jones     77.2
-Moo       100
-Moore     79.4
-Norman    73
-Olson     82.8
-Peerson   66.6
-Russel    79.4
-Smith     87.2
-Thomas    95.6
-Vaughn    87
-Westerly  86.2
+Grad::Grad(istream&)<br />
+Core::Core(istream&)<br />
+Grad::Grad(istream&)<br />
+Core::Core(istream&)<br />
+Core::Core(istream&)<br />
+Core::Core(istream&)<br />
+Grad::Grad(istream&)<br />
+Core::Core(istream&)<br />
+Core::Core(istream&)<br />
+Grad::Grad(istream&)<br />
+Grad::Grad(istream&)<br />
+Grad::Grad(istream&)<br />
+Core::Core(istream&)<br />
+Core::Core(istream&)<br />
+Grad::Grad(istream&)<br />
+Core::Core(istream&)<br />
+Core::Core(istream&)<br />
+Grad::Grad(istream&)<br />
+Baker     67.2<br />
+Carpenter 82<br />
+Davis     74.8<br />
+Edwards   73<br />
+Franklin  66.6<br />
+Harris    92<br />
+Jones     77.2<br />
+Moo       100<br />
+Moore     79.4<br />
+Norman    73<br />
+Olson     82.8<br />
+Peerson   66.6<br />
+Russel    79.4<br />
+Smith     87.2<br />
+Thomas    95.6<br />
+Vaughn    87<br />
+Westerly  86.2<br />
 
 
