@@ -9,7 +9,7 @@
 class Core {
 public:
 	Core(): midterm(0), final(0) { }
-	Core(std::istream& is) { read(is); }
+	Core(std::istream& is) { read(is); std::cerr << "Core::Core(istream&)" << std::endl;}
 
 	std::string name() const;
 
@@ -36,7 +36,7 @@ private:
 class Grad: public Core {
 public:
 	Grad(): thesis(0) { }
-	Grad(std::istream& is) { read(is); }
+	Grad(std::istream& is) { read(is); std::cerr << "Grad::Grad(istream&)" << std::endl; }
 
 	// as defined in 13.1.2/230; Note: `grade' and `read' are `virtual' by inheritance
 	double grade() const;
