@@ -9,7 +9,7 @@
 class Core {
 public:
 	Core(): midterm(0), final(0) { }
-	Core(std::istream& is) { read(is); std::cerr << "Core::Core(istream&)" << std::endl;}
+	Core(std::istream& is) { read(is); /*std::cerr << "Core::Core(istream&)" << std::endl;*/}
 
 	std::string name() const;
 
@@ -19,8 +19,8 @@ public:
 
 	virtual ~Core() { }
 
-	bool valid() const { return !homework.empty(); }
-	std::string letter_grade() const;
+	virtual bool valid() const;
+	virtual std::string letter_grade() const;
 
 protected:
 	// accessible to derived classes
@@ -39,8 +39,9 @@ private:
 class Grad: public Core {
 public:
 	Grad(): thesis(0) { }
-	Grad(std::istream& is) { read(is); std::cerr << "Grad::Grad(istream&)" << std::endl; }
+	Grad(std::istream& is) { read(is); /*std::cerr << "Grad::Grad(istream&)" << std::endl;*/ }
 
+	bool valid() const;
 	// as defined in 13.1.2/230; Note: `grade' and `read' are `virtual' by inheritance
 	double grade() const;
 	std::istream& read(std::istream&);
@@ -50,6 +51,25 @@ private:
 	Core* clone() const { return new Grad(*this); }
 #else
 	Grad* clone() const { return new Grad(*this); }
+#endif
+};
+
+class PassFail: public Core {
+public:
+	PassFail(): pass(0){ }
+	PassFail(std::istream& is) { read(is); /*std::cerr << "PassFail::PassFail(istream&)" << std::endl;*/ }
+
+	bool valid() const;
+	// as defined in 13.1.2/230; Note: `grade' and `read' are `virtual' by inheritance
+	double grade() const;
+	std::istream& read(std::istream&);
+	std::string letter_grade() const;
+private:
+	double pass;
+#ifdef _MSC_VER
+	Core* clone() const { return new PassFail(*this); }
+#else
+	PassFail* clone() const { return new PassFail(*this); }
 #endif
 };
 

@@ -16,6 +16,9 @@ std::istream& read_hw(std::istream& in, std::vector<double>& hw);
 
 string Core::name() const { return n; }
 
+bool Core::valid() const{ return !homework.empty(); }
+
+
 double Core::grade() const
 {
 	//std::cout << "Core:grade()" << std::endl;
@@ -63,11 +66,47 @@ istream& Grad::read(istream& in)
 	return in;
 }
 
+
+
+bool Grad::valid() const{ return !homework.empty() && thesis != 0; }
+
 double Grad::grade() const
 {
 	//std::cout << "Grade::grade()" << std::endl;
 	return min(Core::grade(), thesis);
 }
+
+istream& PassFail::read(istream& in)
+{
+	read_common(in);
+	read_hw(in, homework);
+	return in;
+}
+
+double PassFail::grade() const
+{
+	//std::cout << "Grade::grade()" << std::endl;
+	//return ::grade(midterm, final, homework);
+	if( homework.empty() )
+	{
+		return (midterm + final )/ 2;
+	}
+	else
+	{
+		return Core::grade();
+	}
+	
+}
+
+string PassFail::letter_grade() const {
+	if (PassFail::grade() > 60){
+		return "Pass";
+	}
+	else{
+		return "Fail";
+	}
+}
+
 
 bool compare(const Core& c1, const Core& c2)
 {
