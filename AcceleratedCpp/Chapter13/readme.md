@@ -67,22 +67,22 @@ Core::name()
 
 reason: upon review name isn't virtual whereas grade is. 
 
-13.4 
-output 
-Baker     67.2 D
-Carpenter 82 B-
-Davis     74.8 C
-Edwards   73 B-
-Franklin  66.6 D
-Harris    92 A-
-Jones     77.2 C+
-Moo       100 A+
-Moore     79.4 C+
-Norman    73 C
-Olson     82.8 B-
-Peerson   66.6 D
-Russel    79.4 C+
-Smith     87.2 B+
-Thomas    95.6 A
-Vaughn    87 B+
-Westerly  86.2 B
+13.4 <br />
+output <br />
+Baker     67.2 D <br />
+Carpenter 82 B-<br />
+Davis     74.8 C <br />
+Edwards   73 B- <br />
+Franklin  66.6 D <br />
+Harris    92 A- <br />
+Jones     77.2 C+ <br />
+Moo       100 A+<br />
+Moore     79.4 C+<br />
+Norman    73 C<br />
+Olson     82.8 B-<br />
+Peerson   66.6 D<br />
+Russel    79.4 C+<br />
+Smith     87.2 B+<br />
+Thomas    95.6 A<br />
+Vaughn    87 B+<br />
+Westerly  86.2 B<br />
