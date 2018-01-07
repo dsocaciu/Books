@@ -42,4 +42,47 @@ Thomas    95.6<br />
 Vaughn    87<br />
 Westerly  86.2<br />
 
+13.2
 
+Guess:
+
+Core
+Core
+
+Grad
+Grad
+
+Core
+Core
+
+Grad
+Grad
+
+Result:
+
+Core::name()
+Core::name()
+Core::name()
+Core::name()
+
+reason: upon review name isn't virtual whereas grade is. 
+
+13.4 
+output 
+Baker     67.2 D
+Carpenter 82 B-
+Davis     74.8 C
+Edwards   73 B-
+Franklin  66.6 D
+Harris    92 A-
+Jones     77.2 C+
+Moo       100 A+
+Moore     79.4 C+
+Norman    73 C
+Olson     82.8 B-
+Peerson   66.6 D
+Russel    79.4 C+
+Smith     87.2 B+
+Thomas    95.6 A
+Vaughn    87 B+
+Westerly  86.2 B
