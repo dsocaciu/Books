@@ -18,8 +18,28 @@ string Core::name() const { return n; }
 
 double Core::grade() const
 {
+	//std::cout << "Core:grade()" << std::endl;
 	return ::grade(midterm, final, homework);
 }
+
+string Core::letter_grade() const {
+// range posts for numeric grades 
+	static const double numbers[] = {
+	97, 94, 90, 87, 84, 80, 77, 74, 70, 60, 0 };
+// names for the letter grades
+
+static const char* const letters[] = {
+"A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D", "F" };
+// compute the number of grades given the size of the array
+// and the size of a single element
+	static const size_t ngrades = sizeof(numbers)/sizeof(*numbers);
+// given a numeric grade, find and return the associated letter grade 
+	for (size_t i = 0; i < ngrades; ++i) {
+		if (::grade(midterm, final, homework) >= numbers[i]) return letters[i];
+	}
+        return "?\?\?";
+}
+
 
 istream& Core::read_common(istream& in)
 {
@@ -45,6 +65,7 @@ istream& Grad::read(istream& in)
 
 double Grad::grade() const
 {
+	//std::cout << "Grade::grade()" << std::endl;
 	return min(Core::grade(), thesis);
 }
 

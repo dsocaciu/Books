@@ -63,8 +63,9 @@ int main()
 		     << string(maxlen + 1 - students[i]->name().size(), ' ');
 		try {
 			double final_grade = students[i]->grade();
+			string letter_grade = students[i]->letter_grade();
 			streamsize prec = cout.precision();
-			cout << setprecision(3) << final_grade
+			cout << setprecision(3) << final_grade << "  " << letter_grade
 			     << setprecision(prec) << endl;
 
 		} catch (domain_error e) {
@@ -72,6 +73,38 @@ int main()
 		}
 		delete students[i];        // free the object allocated when reading
 	}
+
+Core* p1 = new Core; 
+Core* p2 = new Grad;
+
+Core s1;
+Grad s2;
+
+if (p1->valid())
+{
+	p1->grade();
+}
+p1->name();
+
+if (p2->valid())
+{
+p2->grade();	
+}
+p2->name();
+
+if (s1.valid())
+{
+	s1.grade();
+}
+ s1.name();
+
+if (s2.valid())
+{
+	s2.grade();
+} 
+
+s2.name(); 
+
 	return 0;
 }
 

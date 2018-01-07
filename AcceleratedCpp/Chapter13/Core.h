@@ -19,6 +19,9 @@ public:
 
 	virtual ~Core() { }
 
+	bool valid() const { return !homework.empty(); }
+	std::string letter_grade() const;
+
 protected:
 	// accessible to derived classes
 	std::istream& read_common(std::istream&);

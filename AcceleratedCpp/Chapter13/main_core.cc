@@ -26,6 +26,10 @@ using std::max;
 
 int main()
 {
+
+
+
+
 	vector<Core> students;          // read and process `Core' records
 	Core record;
 	string::size_type maxlen = 0;
@@ -56,6 +60,18 @@ int main()
 			cout << e.what() << endl;
 		}
 	}
+
+	Core* p1 = new Core; Core* p2 = new Grad; Core s1;
+	Grad s2;
+	//p1->grade();
+	 p1->name();
+	//p2->grade(); 
+	 p2->name();
+	//s1.grade(); 
+	 s1.name();
+	s2.name(); 
+	//s2.grade();
+
 	return 0;
 }
 
