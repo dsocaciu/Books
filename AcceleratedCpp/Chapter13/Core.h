@@ -24,6 +24,7 @@ public:
 
 protected:
 	// accessible to derived classes
+	std::string n;
 	std::istream& read_common(std::istream&);
 	double midterm, final;
 	std::vector<double> homework;
@@ -32,7 +33,7 @@ protected:
 
 private:
 	// accessible only to `Core'
-	std::string n;
+	
 	friend class Student_info;
 };
 
@@ -56,7 +57,7 @@ private:
 
 class PassFail: public Core {
 public:
-	PassFail(): pass(0){ }
+	PassFail() { }
 	PassFail(std::istream& is) { read(is); /*std::cerr << "PassFail::PassFail(istream&)" << std::endl;*/ }
 
 	bool valid() const;
@@ -65,7 +66,6 @@ public:
 	std::istream& read(std::istream&);
 	std::string letter_grade() const;
 private:
-	double pass;
 #ifdef _MSC_VER
 	Core* clone() const { return new PassFail(*this); }
 #else
@@ -75,11 +75,15 @@ private:
 
 class Audit: public Core {
 public:
-	Audit(): audit(0){ }
+	Audit() {}
+	Audit(std::istream& is) { read(is); /*std::cerr << "PassFail::PassFail(istream&)" << std::endl;*/ }
 
+	std::istream& read(std::istream&);
+
+	double grade() const;
 	std::string letter_grade() const;
 private:
-	double audit;
+	std::string audit;
 #ifdef _MSC_VER
 	Core* clone() const { return new Audit(*this); }
 #else

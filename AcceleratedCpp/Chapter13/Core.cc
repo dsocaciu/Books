@@ -83,6 +83,8 @@ istream& PassFail::read(istream& in)
 	return in;
 }
 
+bool PassFail::valid() const{ return midterm!=0 && final!=0;}
+
 double PassFail::grade() const
 {
 	//std::cout << "Grade::grade()" << std::endl;
@@ -107,10 +109,26 @@ string PassFail::letter_grade() const {
 	}
 }
 
+istream& Audit::read(istream& in)
+{
+	in >> n;
+	return in;
+}
+
+double Audit::grade() const
+{
+	//std::cout << "Grade::grade()" << std::endl;
+	//return ::grade(midterm, final, homework);
+
+	return 0.0;
+	
+}
+
 
 string Audit::letter_grade() const {
 	return "Audit";
 }
+
 
 
 bool compare(const Core& c1, const Core& c2)

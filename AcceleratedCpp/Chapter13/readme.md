@@ -86,3 +86,8 @@ Smith     87.2 B+<br />
 Thomas    95.6 A<br />
 Vaughn    87 B+<br />
 Westerly  86.2 B<br />
+
+
+13.9
+
+Results in unexpected behavior with the self assignment check

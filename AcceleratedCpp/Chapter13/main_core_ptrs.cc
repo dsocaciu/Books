@@ -41,7 +41,11 @@ int main()
 	while (cin >> ch) {
 		if (ch == 'U')
 			record = new Core;      // allocate a `Core' object
-		else
+		else if (ch == 'P')
+			record = new PassFail;
+		else if (ch == 'A')
+			record = new Audit;
+		else if (ch == 'G')
 			record = new Grad;      // allocate a `Grad' object
 		record->read(cin);          // `virtual' call
 		maxlen = max(maxlen, record->name().size());// dereference

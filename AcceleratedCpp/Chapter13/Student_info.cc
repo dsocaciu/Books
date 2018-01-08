@@ -14,9 +14,26 @@ istream& Student_info::read(istream& is)
 
 	if (ch == 'U') {
 		cp = new Core(is);
-	} else {
+	} 
+	/*else if (ch == 'G'){
 		cp = new Grad(is);
 	}
+	else if (ch == 'P')
+	{
+		cp = new PassFail(is);
+	}
+	else if (ch == 'A')
+	{
+		cp = new Audit(is);
+	}
+	
+	else{
+		throw std::runtime_error("read invalid student type");
+	}*/
+	else {
+		cp = new Grad(is);
+	}
+
 
 	return is;
 }
