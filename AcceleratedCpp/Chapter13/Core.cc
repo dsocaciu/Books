@@ -108,6 +108,11 @@ string PassFail::letter_grade() const {
 }
 
 
+string Audit::letter_grade() const {
+	return "Audit";
+}
+
+
 bool compare(const Core& c1, const Core& c2)
 {
 	return c1.name() < c2.name();

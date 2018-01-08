@@ -73,6 +73,20 @@ private:
 #endif
 };
 
+class Audit: public Core {
+public:
+	Audit(): audit(0){ }
+
+	std::string letter_grade() const;
+private:
+	double audit;
+#ifdef _MSC_VER
+	Core* clone() const { return new Audit(*this); }
+#else
+	Audit* clone() const { return new Audit(*this); }
+#endif
+};
+
 bool compare(const Core&, const Core&);
 bool compare_Core_ptrs(const Core* cp1, const Core* cp2);
 
